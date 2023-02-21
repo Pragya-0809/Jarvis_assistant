@@ -82,6 +82,13 @@ if __name__=='__main__':
             elif 'empty recycle bin' in data1:
                 winshell.recycle_bin().empty(confirm = False, show_progress = False, sound = True)
                 txtsp("Recycle Bin Recycled")
+                
+            elif 'how are you' in data1:
+                txtsp("I am fine, Thank you")
+                txtsp("How are you, Sir")
+ 
+            elif 'fine' in data1 or "good" in data1:
+                txtsp("It's good to know that your fine")
 
             elif "exit" in data1:
                 txtsp("Thank You")
