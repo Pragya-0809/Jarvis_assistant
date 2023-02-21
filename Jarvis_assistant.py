@@ -4,6 +4,9 @@ import webbrowser                  #displaying web-based documents to users
 import datetime                    #supplies classes for manipulating dates and times.
 import pyjokes                     #used to create one-line jokes for programmers
 import time
+import ctypes
+import subprocess
+import winshell
 
 #function to convert speech to text
 def sptext():
@@ -61,6 +64,24 @@ if __name__=='__main__':
 
             elif 'play song' in data1:
                 webbrowser.open("https://www.youtube.com/channel/UC-9-kyTW8ZkZNDHQJ6FgpwQ")
+                
+            elif 'is love' in data1:
+                txtsp("It is 7th sense that destroy all other senses")
+ 
+            elif "who are you" in data1:
+                txtsp("I am your virtual assistant created by Pragya")
+                
+            elif 'lock window' in data1:
+                txtsp("locking the device")
+                ctypes.windll.user32.LockWorkStation()
+ 
+            elif 'shutdown system' in data1:
+                txtsp("Hold On a Sec ! Your system is on its way to shut down")
+                subprocess.call('shutdown / p /f')
+                 
+            elif 'empty recycle bin' in data1:
+                winshell.recycle_bin().empty(confirm = False, show_progress = False, sound = True)
+                txtsp("Recycle Bin Recycled")
 
             elif "exit" in data1:
                 txtsp("Thank You")
